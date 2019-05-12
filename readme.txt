@@ -1,6 +1,8 @@
 1. Instruction
-This project is basically a standard Java 8 maven project. Make sure Java 8 SDK is installed first. In order to run it, first import this project in IDE. ( I am using Spring Tool Suite 3, Version: 3.9.8.RELEASE on Platform: Eclipse 4.11.0). And then right click on the project -> Run As -> Maven Install to build it. After building succeeds, go to target folder under the project root directory in windows console and execute the following command:
+This project is basically a standard Java 8 maven project. Make sure Java 8 SDK is installed first. In order to run it, first import this project in IDE. ( I am using Spring Tool Suite 3, Version: 3.9.8.RELEASE on Platform: Eclipse 4.11.0). For STS, then right click on the project -> Run As -> Maven Install to build it. After building succeeds, go to target folder under the project root directory in windows console and execute the following command:
 java -jar fguo-fibonnaci-0.0.1-SNAPSHOT.jar Application
+
+You can also use other IDE, e.g. NetBeans, or maven commands to build this project.
 
 2. Sample output
 Please input the number[1-2147483647] of fibonnaci numbers that you want to output.
