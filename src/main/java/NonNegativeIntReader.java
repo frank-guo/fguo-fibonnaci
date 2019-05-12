@@ -6,7 +6,7 @@ public class NonNegativeIntReader {
 	/**
 	 * Read a non-negative integer number from console
 	 * @return The non-negative input int number or -1 for testing
-	 * @throws IOException
+	 * @throws IOException thrown possibly by reading lines from the standard input
 	 */
 	public int read() throws IOException {
 		try(BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in)))
@@ -15,11 +15,11 @@ public class NonNegativeIntReader {
 			int number = 0;
 			String input="";
 			
-			System.out.printf("Please input the number[1-%d] of fibonnaci numbers that you want to output.\n", Integer.MAX_VALUE);
+			System.out.printf("Please input the number[0-%d] of fibonnaci numbers that you want to output.\n", Integer.MAX_VALUE);
 			while(retry) {
 				input = bufferedReader.readLine();
 				if(input==null) {
-					//This only occurs in test cases
+					//This occurs in test cases
 					bufferedReader.close();
 					return -1;
 				}
@@ -29,15 +29,21 @@ public class NonNegativeIntReader {
 				}
 				input = input.trim();
 				if(!input.matches("^\\d+$")) {
-					System.out.printf("Input %s is not a valid number. The input number has to be in the range of [1-%d]. Please retry.\n", input, Integer.MAX_VALUE);
-				} else {
+					System.out.printf("Input %s is negative or not a valid integer. Please retry.\n", input, Integer.MAX_VALUE);
+					continue;
+				}
+				
+				try
+				{
+					number = Integer.valueOf(input);
 					retry = false;
 				}
+				catch (NumberFormatException ex)
+				{
+					System.out.printf("Input %s has to be in the range of [0-%d]. Please retry.\n", input, Integer.MAX_VALUE);
+				}
 			}
-			bufferedReader.close();
-			
-			number = Integer.valueOf(input);
-			
+						
 			return number;
 		}
 	}
