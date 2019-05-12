@@ -10,11 +10,11 @@ The first 100 numbers within the Fibonnaci sequence are:
 
 3. How to make the project more maintainable
 (1)Make error handling better. This includes handling more conerner cases, outputing more detailed and straightforward error messages, using logger, e.g. log4j2
-(2)Comment code as much as necessary also keep code comment itself as much as possible. Basically the classes and public methods should have comments in JavaDoc form and generate Java doc when building the project and make the java doc easily accessible for developers
+(2)Comment the code as much as necessary also keep code comment itself as much as possible. Basically the classes and public members and methods should have comments in JavaDoc form and generate Java doc when building the project and make the java doc easily accessible for developers
 (3)Well document the usage of the applications
-(3)Follow code convention and standards, e.g. good naming, DRY(Don't repeat yourself), etc
-(4)Make code as concise as possible
-(5)Make the code more testable, e.g. make classes less coupling, use interfaces to declare members, avoid big methods and classes, etc.
-(6)Remove any ineffective code instead of commenting it out. Let's Github keep the code history
+(4)Follow code convention and standards, e.g. good naming, DRY(Don't repeat yourself), etc
+(5)Make code as concise as possible
+(6)Make the code more testable and reusable, e.g. make classes less coupling, use interfaces to declare members, avoid big methods and classes, etc.
+(7)Remove any ineffective code instead of commenting it out. Let's Github keep the code history
 
 
