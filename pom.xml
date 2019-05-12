@@ -8,8 +8,50 @@
 	
 	 <build>
  	    <plugins>
+			 <plugin>
+			   <groupId>org.apache.maven.plugins</groupId>
+			   <artifactId>maven-compiler-plugin</artifactId>
+			   <version>3.8.0</version>
+			   <configuration>
+			     <source>1.8</source>  <!-- Compile source code to as Java 1.8 sources -->
+			     <target>1.8</target>  <!-- Compiled classes to be compatible with JVM 1.8 -->
+			   </configuration>
+			 </plugin>
+			 
+		      <plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-jar-plugin</artifactId>
+		        <version>3.1.1</version>
+		        <configuration>
+		          <archive>
+                    <index>true</index>
+                    <manifest>
+                        <mainClass>Application</mainClass>
+                    </manifest>
+		          </archive>
+		        </configuration>
+		      </plugin>
+		      
+				<plugin>
+				  <groupId>org.apache.maven.plugins</groupId>
+				  <artifactId>maven-javadoc-plugin</artifactId>
+				  <version>3.1.0</version>
+				  <configuration>
+				    <quiet>true</quiet>
+				    <reportOutputDirectory>${project.reporting.outputDirectory}/</reportOutputDirectory>
+				  </configuration>
+				  <executions>
+				    <execution>
+				      <id>attach-javadocs</id>
+				      <goals>
+				        <goal>jar</goal>
+				      </goals>
+				    </execution>
+				  </executions>
+				</plugin>
  	    </plugins>
-	 </build>	
+	 </build>
+	
 	  
 	<dependencies>
 	    <dependency>
