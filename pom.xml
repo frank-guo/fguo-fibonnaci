@@ -6,8 +6,12 @@
 	<name>fguo-fibonnaci</name>
 	<description>This project is to generate a fibonnaci sequence</description>
 	
+	  <properties>
+	  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	  </properties>
+	
 	 <build>
- 	    <plugins>
+ 	    <plugins>	    
 			 <plugin>
 			   <groupId>org.apache.maven.plugins</groupId>
 			   <artifactId>maven-compiler-plugin</artifactId>
@@ -15,6 +19,7 @@
 			   <configuration>
 			     <source>1.8</source>  <!-- Compile source code to as Java 1.8 sources -->
 			     <target>1.8</target>  <!-- Compiled classes to be compatible with JVM 1.8 -->
+			     <encoding>${project.build.sourceEncoding}</encoding>
 			   </configuration>
 			 </plugin>
 			 
